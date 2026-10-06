@@ -17,8 +17,8 @@ const server = http.createServer((req, res) => {
       res.write(data);
       res.end();
     });
-  } else if (page == '/css/style.css') {
-    fs.readFile('css/style.css', function (err, data) {
+  } else if (page == '/css/styles.css') {
+    fs.readFile('css/styles.css', function (err, data) {
       res.write(data);
       res.end();
     });
@@ -34,33 +34,23 @@ const server = http.createServer((req, res) => {
 
       const wordCheck = params['palindrome'];
 
-      function palindrome(){
+      function palindrome() {
         const removeChar = wordCheck.replace(/[^a-zA-Z0-9]/g, "").toLowerCase(); //this code removes special characters, spaces and makes the input lowercase. I googled it.
         const wordReverse = removeChar.split('').reverse().join(''); //this reverses the user input 
-
         //here we check if it's a palindrome with if conditionals and booleans
-        // if (removeChar == wordReverse) {
-        //   return `${wordCheck} is a palindrome!`
-        // } else if (removeChar !== wordReverse) {
-        //   return `${wordCheck} is NOT a palindrome`
-        // } else if ( removeChar == ''){
-        //   return 'Please enter a word or phrase.'
-        // }
-        if (removeChar === ''){
-          return 'Please enter a word or phrase.'
-        }else if (removeChar == wordReverse){
+        if (removeChar === '') {
+          return 'Please enter a word or phrase~'
+        } else if (removeChar == wordReverse) {
           return `${wordCheck} is a palindrome!`
-        }else{
-          `${wordCheck} is NOT a palindsrome!`
+        } else {
+          return `${wordCheck} is NOT a palindrome!`
         }
-
-        //BOTH IF CONDITIONALS ABOVE AREN'T SHOWING THE ERROR!!!! It's because the function takes in the wordCheck....how to fix?
       }
       const result = palindrome(wordCheck);
-      const objToJson = { 
+      const objToJson = {
         message: result
       }
-    res.end(JSON.stringify(objToJson));
+      res.end(JSON.stringify(objToJson));
     }
   } else {
     figlet('404!!', function (err, data) {
@@ -74,10 +64,4 @@ const server = http.createServer((req, res) => {
     });
   }
 })
-server.listen(8000);
-
-
-
-
-
-
+server.listen(8080);

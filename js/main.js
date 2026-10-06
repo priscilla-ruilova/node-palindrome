@@ -6,10 +6,10 @@ function paliTrueFalse(){
     console.log(wordCheck)
 
     fetch(`/api?palindrome=${wordCheck}`)
-    .then(response => response.json())
+    .then((res) => res.json())
     .then((data) => {
       console.log(data);
-        document.querySelector('#result').textContent = data.message;
+        document.querySelector('#result').textContent = data.message; //the message is the object I create in the server
     });
 
 

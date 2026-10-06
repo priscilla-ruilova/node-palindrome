@@ -1,22 +1,13 @@
-# ↔️ Week08 Bootcamp2019a Project: Server Side Palindrome Checker
+#Project: Server Side Palindrome Checker
 
 ### Goal: Create a simple web application that uses the fs and http modules to validate if a string is a palindrome server side.
 
-### How to submit your code for review:
+### Features: This website uses an input to take in a word and a button with a click event that runs server side javascript code and returns a result that shares whether the input was a palindrome or was not a palindrome. 
 
-- Fork and clone this repo
-- Create a new branch called answer
-- Checkout answer branch
-- Push to your fork
-- Issue a pull request
-- Your pull request description should contain the following:
-  - (1 to 5 no 3) I completed the challenge
-  - (1 to 5 no 3) I feel good about my code
-  - Anything specific on which you want feedback!
+![screenshot of the web page](/css/screenshotWebpage.png)
 
-Example:
-```
-I completed the challenge: 5
-I feel good about my code: 4
-I'm not sure if my constructors are setup cleanly...
-```
+### What I learned:
+- I learned that it's a good idea to write the safe fallback conditional first instead of at the end. This is how I had my code originally. It wasn't showing the expression 'Please enter a word or phrase' when I hit the button without writing an input: 
+![image of previous bad code](/css/screenshotCode2.png)
+- And this is was the code that made it all run smoothly: 
+![image of final code](/css/screenshotCode.png)
