@@ -1,9 +1,9 @@
-
 const http = require('http'); //an app layer used to exchange data from client<--> server
 const fs = require('fs') //file system built into node that provides methods to CRUD and manage files w/out external libraries
 const url = require('url');
 const querystring = require('querystring');
 const figlet = require('figlet');
+
 
 //page == '/' is referencing the root homepage aka index.html
 const server = http.createServer((req, res) => {
@@ -64,4 +64,8 @@ const server = http.createServer((req, res) => {
     });
   }
 })
-server.listen(8080);
+const PORT = process.env.PORT || 8080; 
+
+server.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`);
+});
