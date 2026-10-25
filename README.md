@@ -21,4 +21,4 @@ The the time to play around with names, phrases, or random letters!
 - HTML, CSS, JavaScript 
 
 ### How to access
-- Click the link in the about section to the right or follow this link for the live site on Render: 
+- Click the link in the about section to the right or follow this link for the live site on Render: https://node-palindrome-h4ez.onrender.com/
